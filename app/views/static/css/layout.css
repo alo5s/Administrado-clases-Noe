@@ -1,0 +1,44 @@
+/* Reglas Css Para todo */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+input, textarea{
+    outline: none;
+}
+
+li, a{
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/* Estilo del (1)navbar y (2)search     background-color: #808080;     padding: 20px 60px ; */
+
+/*1*/
+header{
+    font-size: 20px;
+    padding: 20px 0px ;
+    background-color: #808080;
+}
+.content-ul-li-a, ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+.content-link{
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 15px;
+    color: white;
+    transition: 2s;
+}
+.content-link:hover{
+    transition: 2s;
+    border-bottom: 1px solid;
+    border-color: rgb(0, 0, 0);
+}
+

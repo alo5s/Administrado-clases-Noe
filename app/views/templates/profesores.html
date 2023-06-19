@@ -1,0 +1,39 @@
+{% extends "layout/layout.html" %}
+{% block customCSS %}
+<link rel="stylesheet" href="/static/css/view-style.css">
+{% endblock %}
+{% block body %}
+<section class="content-section-profesores">
+    <div class="content-profesores">
+        <div class="content-tb">
+            <div class="tb-header">
+                <h1>PROFESORES</h1>
+                <a href="/Profesores/add_profesores" id=""><button class="btn">Agregar</button></a>
+                
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="column">Nombre</th>
+                        <th class="column">#</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for profesor in profesores %}
+                    <tr>
+                        <th>{{profesor.1}}</th>
+                        <th>
+                            <div class="contents-icon">
+                                <a class="icon" href="#"><img src="/static/img/actualizar.png"></a>
+                                <a class="icon" href="/Profesores/delet/{{profesor.0}}"><img src="/static/img/borrar.png"></a>
+                            </div>
+                        </th>
+                        
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

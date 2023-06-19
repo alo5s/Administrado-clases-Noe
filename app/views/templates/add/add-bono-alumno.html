@@ -1,0 +1,58 @@
+{% extends 'layout/layout.html' %}
+{% block customCSS %}
+    <link rel="stylesheet" href="/static/css/add-style.css">
+{% endblock %}
+{% block body %}
+    <section class="section-add-grupo">
+        <form action="/Bono/add-bono-alumno/" method="POST">
+            <div class="header_form title-grupo">
+                <h1>CREAR BONO</h1>
+            </div>
+            <div class="body_form">
+                <div  class="colum"  >
+                    <p>
+                        <label>Modalidad de los Bono</label>
+                        <select name="modalidad" id="modalidad" >
+                            <option value="online">Online</option>
+                            <option value="presencial">Presencial</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Duración de las Clases</label>
+                        <select name="duración"id="duración">
+                            <option value="00:50:00">50</option>
+                            <option value="01:00:00">60</option>
+                            <option value="01:30:00">90</option>
+                            <option value="02:00:00">120</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Nombre del Bono</label>
+                        <input type="text" name="nombre-bono" placeholder="Name" required>
+                    </p>
+                    <p>
+                        <label>Precio €</label>
+                        <input step="any" type="number" name="precio" required>
+
+                    </p>
+                    <p>
+                        <label>Número de Clases</label>
+                        <input type="number"name="numero_de_clases" step="any" required>
+                    </p>
+                    <p>
+                        <label>Caducidad en días</label>
+                        <input type="number" name="caducidad" step="any" required>
+                    </p>
+
+                    <p class="block">
+                        <label>Nota</label> 
+                        <textarea name="nota" rows="3" placeholder="Un Comentario Del Bono"></textarea>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-form">
+                <button>Guardar</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}

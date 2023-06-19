@@ -1,0 +1,115 @@
+{% extends 'layout/layout.html' %}
+{% block customCSS %}
+    <link rel="stylesheet" href="/static/css/add-style.css">
+{% endblock %}
+{% block body %}
+    <section class="section-add-grupo">
+        <form action="/Profesores/add_profesores" method="POST">
+            <div class="header_form title-profesores">
+                <h1>DATOS DEL PROFESOR</h1>
+            </div>
+            <div class="body_form">
+                <div  class="colum"  >
+                    <h1>Datos Personales</h1>
+                    <p>
+                        <label>Nombre</label>
+                        <input type="text" name="name">
+                    </p>
+                    <p>
+                        <label>Apellido</label>
+                        <input type="text" name="apellido">
+                    </p>
+                    <p>
+                        <label>Fecha nacimiento</label>
+                        <input type="date" name="fecha-nacimiento">
+                    </p>
+                    <p>
+                        <label>Teléfono</label>
+                        <input type="text" name="teléfono">
+                    </p>
+                    <p>
+                        <label>E-mail</label>
+                        <input type="text" name="e-mail">
+                    </p>
+                    <p>
+                        <label>DNI/NIE</label>
+                        <input type="text" name="dni">
+                    </p>
+                    <p>
+                        <label>Domicilio</label>
+                        <input type="text" name="domicilio">
+                    </p>
+                </div>
+                <div  class="colum"  >
+                    <h1>Datos Profesionales</h1>
+                    <p>
+                        <label>Estudios/Títulos</label>
+                        <input type="text" name="titulo-estudios">
+                    </p>
+                    <p>
+                        <label>Idiomas</label>
+                        <input type="text" name="idiomas">
+                    </p>
+                    <p>
+                        <label>Nivel Academico</label>
+                        <input type="text" name="nivel-academico">
+                    </p>
+                    <p class="block">
+                        <label>Observaciones</label> 
+                        <textarea name="Observaciones-1" rows="3"></textarea>
+                    </p>
+                </div>
+                <div  class="colum"  >
+                    <h1>Datos Laborales</h1>
+                    <p>
+                        <label>Modalidad</label>
+                        <select id="selecto" name="modalidad">
+                            <option value="online">Online</option>
+                            <option value="presencia">Presencia</option>
+                            <option value="mixto">Mixta</option>
+                            <option value="todos">Todos</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Turno disponible</label>
+                        <select id="selecto" name="turno-disponible">
+                            <option value="mañana">mañana</option>
+                            <option value="mediodía">mediodía</option>
+                            <option value="tarde">tarde</option>
+                            <option value="sábados">sábados</option>
+                            <option value="todos">todos</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Otra disponibilidad</label>
+                        <input type="text" name="otra-disponibilidad">
+                    </p>
+                    <p class="block">
+                        <label>Observaciones</label> 
+                        <textarea name="Observaciones-2" rows="3"></textarea>
+                    </p>
+                </div>
+                <div  class="colum"  >
+                    <h1>Tarifa del Profesore</h1>
+                    <p>
+                        <label>Tarifa</label>
+                        <input type="number" name="tarifa">
+                    </p>
+                </div>
+            </div>
+            <div class="footer-form">
+                <button>Guardar</button>
+            </div>
+        </form>
+    </section>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '{{ messages[0][1] }}',
+        });
+    </script>
+    {% endif %}
+    {% endwith %}
+{% endblock %}

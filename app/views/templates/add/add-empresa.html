@@ -1,0 +1,124 @@
+{% extends 'layout/layout.html' %}
+{% block customCSS %}
+    <link rel="stylesheet" href="/static/css/add-style.css">
+{% endblock %}
+{% block body %}
+    <section class="section-add-empresa">
+        <form action="/Estudiantes/add-empresa" method="POST">
+            <div class="header_form title-empresa">
+                <h1>DATOS DE LA EMPRESA</h1>
+            </div>
+            <div class="body_form">
+                <div  class="colum"> 
+                    <h1>Datos</h1>
+                    <p>
+                        <label>Nombre empresa</label>
+                        <input type="text" name="name_empresa">
+                    </p>
+                    <p>
+                        <label>CIF</label>
+                        <input type="text" name="cif">
+                    </p>
+                    <p>
+                        <label>Dirección</label>
+                        <input type="text" name="dirección">
+                    </p>
+                    <p>
+                        <label>Teléfono</label>
+                        <input type="text" name="teléfono">
+                    </p>
+                    <p>
+                        <label>E-mail</label>
+                        <input type="text" name="e-mail">
+                    </p>
+                </div>
+                <div class="colum">
+                    <div class="content-title-contact">
+                        <h1>CONTACTO DE LA EMPRESA</h1>
+                    </div>
+                    <div  class="colum-2">
+                        <div class="colum"> 
+                            <p>
+                                <label>Nombre Del contacto</label>
+                                <input type="text" name="nombre-contacto-1">
+                            </p>
+                            <p>
+                                <label>Departamento 1</label>
+                                <input type="text" name="departamento-1">
+                            </p>
+                            <p>
+                                <label>E-mail 1</label>
+                                <input type="text" name="e-mail-contacto-1">
+                            </p>
+                            <p>
+                                <label>Teléfono 1</label>
+                                <input type="text" name="telefono-contacto-1">
+                            </p>
+                            <p class="block">
+                                <label>Observaciones </label> 
+                                <textarea name="observaciones-1" rows="3"></textarea>
+                            </p>
+                        </div>
+                        <div> 
+                            <p>
+                                <label>Nombre Del contacto</label>
+                                <input type="text" name="nombre-contacto-2">
+                            </p>
+                            <p>
+                                <label>Departamento 2</label>
+                                <input type="text" name="departamento-2">
+                            </p>
+                            <p>
+                                <label>E-mail 2</label>
+                                <input type="text" name="e-mail-contacto-2">
+                            </p>
+                            <p>
+                                <label>Teléfono 2</label>
+                                <input type="text" name="telefono-contacto-2">
+                            </p>
+                            <p class="block">
+                                <label>Observaciones </label> 
+                                <textarea name="observaciones-2" rows="3"></textarea>
+                            </p>
+                        </div>
+                        <div> 
+                            <p>
+                                <label>Nombre Del contacto </label>
+                                <input type="text" name="nombre-contacto-3">
+                            </p>
+                            <p>
+                                <label>Departamento 3</label>
+                                <input type="text" name="departamento-3">
+                            </p>
+                            <p>
+                                <label>E-mail 3</label>
+                                <input type="text" name="e-mail-contacto-3">
+                            </p>
+                            <p>
+                                <label>Teléfono 3</label>
+                                <input type="text" name="telefono-contacto-3">
+                            </p>
+                            <p class="block">
+                                <label>Observaciones</label> 
+                                <textarea name="observaciones-3" rows="3"></textarea>
+                            </p>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+            <div class="footer-form">
+                <button>Guardar</button>
+            </div>
+        </form>
+    </section>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '{{ messages[0][1] }}',
+        });
+    </script>
+    {% endif %}
+    {% endwith %}
+{% endblock %}

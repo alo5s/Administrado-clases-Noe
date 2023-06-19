@@ -1,0 +1,149 @@
+/* Estilos de las tabla*/
+.table_body{
+    height: 350px; 
+    overflow-y: scroll; 
+    overflow: overlay;
+    padding-top: 20px;
+
+}
+.table_body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table_body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: rgba(0, 0, 0, 0.445);
+    visibility: hidden;
+}
+
+.table_body:hover::-webkit-scrollbar-thumb{ 
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    max-height: calc(89% - 1.6rem);
+}
+/*
+table th,
+table td {
+    border-bottom: 1px solid #000000; /* Agrega un borde de 1px de ancho y color gris claro a las celdas */
+
+.column{
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 3.4;
+    background-color: #808080;
+    width: 20px;
+}
+tbody{
+    font-family:  system-ui;
+    font-size: 15px;
+    color: #808080;
+    line-height: 3.4;
+    background-color: rgb(255, 255, 255);
+}
+tbody tr:nth-child(even) {
+    background-color: #6969690b;
+}
+
+.btn{
+    text-transform: uppercase;
+    background-color: #808080;
+    cursor: pointer;
+    display: inline-block;
+    padding: 11px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    border: 1px solid transparent;
+}
+.btn:hover{
+    background-color: rgb(255, 80, 80);
+    color: rgb(0, 0, 0);
+}
+.conetent-tb-op,h1{
+    font-family: system-ui;
+    padding: 8px 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* NI ACUERDO QUE HACE ESTE ESTILO
+tbody tr:hover {
+    background-color: rgba(138, 138, 138, 0.116) !important;
+}
+
+/* --------------view Estudiante------------------------*/
+
+
+.content-section-estudiantes{
+    padding: 5% 10%;
+}
+
+#selecto-tablas{
+    width: 114px;
+    height: 41px;
+    margin-right: 42px;
+    font-size: 17px;
+}
+
+
+/* --------------view Profesores------------------------*/
+
+.content-section-profesores{
+    padding: 5% 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-profesores{
+    width: 425px;
+}
+
+.tb-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5px
+}
+
+/* --------------view Bonos------------------------*/
+
+.content-section-bonos{
+    padding: 5% 10%;
+}
+
+.contents-tb-bonos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bonos-alumnos, .bonos-grupos {
+    width: 425px;    
+}
+
+.bono-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.contents-icon, .icon{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center
+}
+
+/*---------------------------------------------------*/
+/* Style calendario-home */
+.content-calendario{
+    position: absolute;
+    top: 35px;
+    left: 20px;
+}

@@ -1,0 +1,92 @@
+{% extends "layout/layout.html" %}
+
+{% block customCSS %}
+    <link rel="stylesheet" href="/static/css/calendario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+{% endblock %}
+{% block body %}
+<section>
+    <div class='container'>
+        <div class='row mt-5'>
+            <h1>Feriados - Días no Laborables</h1>
+        </div>
+        <form method="POST" action="/calendario/add-fecha">
+            <div class='row mt-2 text-center'>
+                <div>
+                    <input type="date" id="fecha" name="fecha" class="form-control custom-date-input" required autocomplete="off">
+                    <label for="fecha" class="form-label">Fecha</label>
+                </div>
+                <div class="col-4">
+                    <input name='razon' type="text" class="form-control" autocomplete="off">
+                    <label for="razon" class="form-label">Motivo</label>
+                </div>
+            </div>
+            <div class="row mt-2 text-center">
+                <div>
+                    <button type="submit" class="btn-primary" name='agregar'>Agregar Fecha</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <form method="POST" action="/calendario/update-fecha">
+        <div class='row justify-content-center mt-5'>
+            <div class='col-auto mx-auto'>
+                <p>Este es un listado de todas las fechas no laborables cargadas al sistema. El sistema no permitirá asignar clases en los días que se agreguen a esta lista.</p>
+                <table class='table'>
+                    <colgroup>
+                        <col span="1" style="width: 15%;">
+                        <col span="1" style="width: 50%;">
+                        <col span="1" style="width: 35%;">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="header-tb">Fecha</th>
+                            <th class="header-tb">Razón</th>
+                            <th class="header-tb">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fecha in fechas %}
+                        <tr>
+                            <td>
+                                <input name='fecha.{{fecha.0}}'  type="date" class="form-control" value="{{fecha.1}}" required> 
+                            </td>
+                            <td >
+                                <input type="text" name='razon{{fecha.0}}' value="{{fecha.2}}" class="form-control">
+                            </td>						
+                            <td class="row-td">
+                                <a href="/calendario/delete/{{fecha.0}}"class="btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-5 content-footer-btn">
+            <div class="col-auto">
+                <button type="submit" class="btn-update " name='guardar'>Guardar Fechas</button>
+            </div>
+        </div>
+    </form>
+</section>
+<script>
+    flatpickr("#fecha", {
+        dateFormat: "d-m-Y",
+        defaultDate: null,  // Establecer la fecha predeterminada como null
+        locale: {
+            firstDayOfWeek: 1,
+            weekdays: {
+                shorthand: ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'],
+                longhand: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
+            },
+            months: {
+                shorthand: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                longhand: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+            }
+        }
+    });
+    </script>
+
+{% endblock %}

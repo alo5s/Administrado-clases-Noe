@@ -1,0 +1,37 @@
+{% extends 'layout/layout.html' %}
+{% block customCSS %}
+    <link rel="stylesheet" href="/static/css/add-style.css">
+{% endblock %}
+{% block body %}
+    <section class="section-add-grupo">
+        <form action="/Estudiantes/add_grupo" method="POST">
+            <div class="header_form title-grupo">
+                <h1>CREAR GRUPO</h1>
+            </div>
+            <div class="body_form">
+                <div  class="colum"  >
+                    <h1>DATOS</h1>
+                    <p>
+                        <label>Modalidad</label>
+                        <select id="selecto" name="Modalidad">
+                            <option value="online">Online</option>
+                            <option value="presencia">Presencia</option>
+                            <option value="mixto">Mixta</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Nombre de Grupo</label>
+                        <input type="text" name="name-grupo">
+                    </p>
+                    <p>
+                        <label>Número de estudiantes</label>
+                        <input type="number" name="nuemo-estudiante">
+                    </p>
+                </div>
+            </div>
+            <div class="footer-form">
+                <button>Guardar</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}

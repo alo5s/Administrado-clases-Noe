@@ -1,0 +1,140 @@
+{% extends 'layout/layout.html' %}
+{% block customCSS %}
+<link rel="stylesheet" href="/static/css/add-style.css">
+
+<script defer src="/static/js/index.js"></script>
+
+{% endblock %}
+{% block body %}
+    <section class="section-add-alumno">    
+        <form action="/Estudiantes/add-alumno" method="POST">
+            <div class="header_form">
+                <select id="selecto-adulto-menor" name="menor_adulto">
+                    <option value="adulto">Adulto</option>
+                    <option value="menor">Menor</option>
+                </select>
+            </div>
+            <div class="body_form">
+                <div  class="colum" id="colum-adulto"> 
+                        <h1>DATOS</h1>
+                    <p>
+                        <label>Nombre Completo</label>
+                        <input type="text" name="fullname">
+                    </p>
+                    <p>
+                        <label>Apellido</label>
+                        <input type="text" name="apellido">
+                    </p>
+                    <p>
+                        <label>Fecha nacimient</label>
+                        <input type="date" name="fecha_nacimient">
+                    </p>
+                    <p id="d.n.i-adulto" style="display: none;">
+                        <label>DNI/NIE</label>
+                        <input type="nume" name="d.n.i">
+                    </p>
+                    <p>
+                        <label>Email</label>
+                        <input type="email" name="email">
+                    </p>
+                    <p>
+                        <label>Telefono</label>
+                        <input type="nume" name="telefono">
+                    </p>
+                    <p id="domicilio-adulto" style="display: none;">
+                        <label>Domicilio</label>
+                        <input type="text" name="domicilio">
+                    </p>
+                </div>
+                <div id="colum-menor" style="display: none;">
+                    <div class="content-title-contact">
+                        <h1>DATOS DE TUTORES</h1>
+                    </div>
+                    <div class="colum-2">
+                        <div>
+                            <p>
+                                <label>Nombre de Tutor 1</label>
+                                <input type="text" name="nombre-1">
+                            </p>
+                            <p>
+                                <label>Apellido de Tutor 1</label>
+                                <input type="text" name="apellido-1">
+                            </p>
+                            <p>
+                                <label>Telefono de Tutor 1</label>
+                                <input type="text" name="telefono-1">
+                            </p>
+                            <p>
+                                <label>D.N.I del Tutor 1</label>
+                                <input type="text" name="dni-1">
+                            </p>
+                            <p>
+                                <label>Domicilio del Tutor 1</label>
+                                <input type="text" name="domicilio-1">
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                <label>Nombre de Tutor 2</label>
+                                <input type="text" name="nombre-2">
+                            </p>
+                            <p>
+                                <label>Apellido de Tutor 2</label>
+                                <input type="text" name="apellido-2">
+                            </p>
+                            <p>
+                                <label>Telefono de Tutor 2</label>
+                                <input type="text" name="telefono-2">
+                            </p>
+                            <p>
+                                <label>D.N.I del Tutor 2</label>
+                                <input type="text" name="dni-2">
+                            </p>
+                            <p>
+                                <label>Domicilio del Tutor 2</label>
+                                <input type="text" name="domicilio-2">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="colum">
+                    <h1 class="content_title">DATOS ACADEMICOS</h1>
+                    <p>
+                        <label>Modalidad</label>
+                        <input type="text" name="modalidad">
+                    </p>
+                    <p>
+                        <label>Idioma</label>
+                        <input type="text" name="idioma">
+                    </p>
+                    <p>
+                        <label>Nivel actual</label>
+                        <input type="text" name="nivel-actual">
+                    </p>
+                    <p>
+                        <label>Objetivo</label>
+                        <input type="text" name="objetivo">
+                    </p>
+                    <p class="block">
+                        <label>Observaciones</label> 
+                        <textarea name="message" rows="3"></textarea>
+                    </p>
+                </div>
+            </div>
+            <div class="footer-form">
+                <button>Guardar</button>
+            </div>
+        </form>
+    </section>
+        <!-- Script para mostrar la alerta en caso de éxito -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '{{ messages[0][1] }}',
+        });
+    </script>
+    {% endif %}
+    {% endwith %}
+{% endblock %}

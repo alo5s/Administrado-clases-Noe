@@ -1,0 +1,95 @@
+
+/*Estilos para los todos Form templates-add*/
+section{
+    display: flex;
+    justify-content: center;
+    padding: 70px;
+    font-family: 'Quicksand', sans-serif;
+    background-color: transparent; 
+}
+
+.body_form{
+    padding: 20px;
+    display: flex;
+}
+.colum{
+    padding: 0px 8px;
+}
+.content-title-contact{
+    text-align: center;
+}
+
+.colum-2{
+    display: flex;
+}
+
+p {
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+label{
+    padding: 0px 0px;
+}
+.content_title{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-form{
+    display: flex;
+    justify-content: center;
+}
+
+.footer-form button{
+    cursor: pointer;
+    display: inline-block;
+    padding: 11px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: rgb(80, 191, 255);
+    color: black;
+    border: 1px solid transparent;
+}
+
+.footer-form button:hover{
+    background-color: rgb(255, 80, 80);
+    color: aliceblue;
+}
+
+
+/*----------------------------------------*/
+
+/* style add-alumno */
+
+#selecto-adulto-menor {
+    background: transparent;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: 1px solid;
+    width: 114px;
+    height: 41px;
+    margin-right: 42px;
+    font-size: 17px;
+}
+
+/* style add-empresa */
+.title-empresa{
+    display: flex;
+    border-bottom: 1px solid;
+}
+
+/* style add-grupo */
+.title-border-botton{
+    display: flex;
+    border-bottom: 1px solid;
+}
+
+/* style add-profesores */
+.title-profesores{
+    display: flex;
+    border-bottom: 1px solid;
+}
+

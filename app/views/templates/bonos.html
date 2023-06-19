@@ -1,0 +1,38 @@
+{% extends 'layout/layout.html' %}
+{% block customCSS %}
+    <link rel="stylesheet" href="/static/css/view-style.css">
+{% endblock %}
+{% block body %}
+    <section class="content-section-bonos">
+        <div class="contents-tb-bonos">
+            <div class="bonos-alumnos">
+                <div class="bono-header">
+                    <h1>BONOS</h1>
+                    <a href="/Bono/add-bono-alumno" id=""><button class="btn">Crear Bono</button></a>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="column">Nombre</th>
+                            <th class="column">#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for bono in bonos %}
+                        <tr>
+                            <th>{{bono.1}}</th>
+                            <th>
+                                <div class="contents-icon">
+                                    <a class="icon" href="/Bonos/view/{{bono.0}}"><img src="/static/img/actualizar.png"></a>
+                                    <a class="icon" href="/Bonos/delet/{{bono.0}}"><img src="/static/img/borrar.png"></a>
+                                </div>
+                            </th>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

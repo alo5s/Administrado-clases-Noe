@@ -1,0 +1,107 @@
+{% extends 'layout/layout.html' %}
+{% block customCSS %}
+<link rel="stylesheet" href="/static/css/view-style.css">
+
+<script defer src="/static/js/estudiante.js"></script>
+{% endblock %}
+{% block body %}
+<section class="content-section-estudiantes">
+    <div class="content-tabla-header">
+      <select id="selecto-tablas">
+        <option value="alumno">Alumno</option>
+        <option value="grupo">Grupo</option>
+        <option value="empresa">Empresa</option>
+      </select>
+    </div>
+    <div class="table">
+      <div class="table_body">
+        <div id="alumno-tabla" style="display:none;">
+          <table >
+            <div class="conetent-tb-op">
+              <h1>Lista de Alumno</h1>
+              <a href="/Estudiantes/add-alumno"><button class="btn">Agregar Alumno</button></a>
+            </div>
+            <thead>
+              <tr>
+                <th class="column">Id</th>
+                <th class="column">Nombre</th>
+                <th class="column">Estado</th>
+                <th class="column">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for alumno in alumnos %}
+                    <tr>
+                        <th>{{alumno.0}}</th>
+                        <th>{{alumno.1}}</th>
+                        <th>ver clases</th>
+                        <th>
+                            <div class="contents-icon">
+                                <a class="icon" href="#"><img src="/static/img/actualizar.png"></a>
+                                <a class="icon" href="/Estudiantes/Alumno/dalete/{{alumno.0}}"><img src="/static/img/borrar.png"></a>
+                            </div>
+                        </th>
+                    </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        <div id="grupo-tabla" style="display:none;">
+          <table>
+            <div class="conetent-tb-op">
+              <h1>Lista de Grupo</h1>
+              <a href="/Estudiantes/add-grupo" ><button class="btn">Crear Grupo</button></a>
+            </div>
+            <thead>
+              <tr>
+                <th class="column">Id</th>
+                <th class="column">Nombre</th>
+                <th class="column">Estado</th>
+                <th class="column">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <th>Grupo tarde</th>
+                <th>Activo</th>
+                <th>View,edit y dalet</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="empresa-tabla" style="display:none;">
+          <table>
+            <div class="conetent-tb-op">
+              <h1>Lista de Empresa</h1>
+              <a href="/Estudiantes/add-empresa" id=""><button class="btn">Agregar Empresa</button></a>
+            </div>
+            <thead>
+              <tr>
+                <th class="column">Id</th>
+                <th class="column">Nombre</th>
+                <th class="column">Estado</th>
+                <th class="column">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for empresa in empresas %}
+                    <tr>
+                        <th>{{empresa.0}}</th>
+                        <th>{{empresa.1}}</th>
+                        <th>ver clases</th>
+                        <th>
+                            <div class="contents-icon">
+                                <a class="icon" href="#"><img src="/static/img/actualizar.png"></a>
+                                <a class="icon" href="/Estudiantes/Empresa/dalete/{{empresa.0}}"><img src="/static/img/borrar.png"></a>
+                            </div>
+                        </th>
+                    </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

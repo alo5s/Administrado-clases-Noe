@@ -1,0 +1,6 @@
+# Ignora env
+.env
+# Ignora db.sql
+db.sql
+# Ignora __pycache__
+__pycache__

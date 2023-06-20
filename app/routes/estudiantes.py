@@ -160,8 +160,8 @@ def delete_alumno(id):
         affected_rows = AlumnoModel().dalete_alumno(id)
         if affected_rows == 1:
             print("Dato borra ")
-            return redirect(render_add_alumno_template())
-            #return redirect(url_for('views_estudiantes.render_estudiantes_template')) Para probar Alago despues borra.
+            #return redirect(render_add_alumno_template())
+            return redirect(url_for('views_estudiantes.render_estudiantes_template')) # Para probar Alago despues borra.
 
         else:
             return render_estudiantes_template()

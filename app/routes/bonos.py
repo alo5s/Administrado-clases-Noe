@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 import datetime
 
 # Models
@@ -46,7 +46,7 @@ def add():
         affected_rows = BonosModel().create_bono(datos)
         
         if affected_rows == 1:
-            print("Todo Guardados Bien")
+            flash("Bono Creado")
         else:
             print("Algo Salio Mal")
 
@@ -80,7 +80,7 @@ def  update(id):
         datos = process_bono_form()
         affected_rows = BonosModel.updata_bono(datos, id)
         if affected_rows == 1:
-            print("Todo Guardados Bien")
+            print("Bono Actualizado")
         else:
             print("Algo Salio Mal")
 

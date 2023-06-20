@@ -55,4 +55,15 @@
             </div>
         </form>
     </section>
+        <!-- Script para mostrar la alerta en caso de éxito -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '{{ messages[0][1] }}',
+        });
+    </script>
+    {% endif %}
+    {% endwith %}
 {% endblock %}

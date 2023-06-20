@@ -127,7 +127,9 @@ def process_empresas_form():
 # CARGAR EL TEMPLATE DE TOdO
 @views_estudiantes.route("/Estudiantes")
 def view():
-    return render_estudiantes_template()
+    empresas = EmpresaModel().views_empresa()
+    alumnos = AlumnoModel().views_alumnos()
+    return render_template("/estudiantes.html", empresas = empresas, alumnos = alumnos)
 
 # GUARDAR DATOD DE ALUMNO MENOR/ADULTO EN SUS TABLAS SQL(ALUMNO_MENOR/ALUMNO_ADULTO)
 @views_estudiantes.route("/Estudiantes/add-alumno", methods=['GET', 'POST'])

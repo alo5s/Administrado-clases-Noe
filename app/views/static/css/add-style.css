@@ -92,4 +92,8 @@ label{
     display: flex;
     border-bottom: 1px solid;
 }
+/* style add-profesores */
+.add-bono-title{
+    border-bottom: 1px solid;
+}
 

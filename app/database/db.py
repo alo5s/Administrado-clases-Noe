@@ -8,11 +8,11 @@ load_dotenv()
 def get_db_connection():
     try:
         db_connection = mysql.connector.connect(
-            host=os.environ.get('MYSQL_HOST'),
-            user=os.environ.get('MYSQL_USER'),
-            password=os.environ.get('MYSQL_PASSWORD'),
-            database=os.environ.get('MYSQL_DATABASE'),
-            port=os.environ.get('MYSQL_PORT'),
+            host=os.environ.get('MYSQLHOST'),
+            user=os.environ.get('MYSQLUSER'),
+            password=os.environ.get('MYSQLPASSWORD'),
+            database=os.environ.get('MYSQLDATABASE'),
+            port=os.environ.get('MYSQLPORT'),
             #connect_timeout=3600 # Timeout en segundos
         )
         return db_connection
